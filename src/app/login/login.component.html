@@ -1,0 +1,31 @@
+<div class="login-background">
+  <div class="container login-container">
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+        <div class="text-center">
+          <img src="assets/img/custom-app-icon@3x.png" alt="logo">
+        </div>
+        <p class="text-large py-3">Connect with candidates faster.</p>
+        <p class="text-large">Sign Up</p>
+        <form class="login-form-container text-center" (ngSubmit)="onSubmit()" #userForm="ngForm">
+          <div class="form-group">
+            <input type="text" class="form-control" required placeholder="First Name" [(ngModel)]="user.firstname" name="firstname">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Last Name" required [(ngModel)]="user.lastname" name="lastname">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" required [(ngModel)]="user.email" name="email">
+          </div>
+          <div class="form-group relative-container">
+            <input [type]="passwordType" class="form-control" placeholder="Password" required [(ngModel)]="user.password" name="password">
+            <i class="icon" [ngClass]="{'ion-eye-disabled': passwordType === 'password','ion-eye': passwordType === 'text'}" (click)="showPassword()"></i>
+          </div>
+          <button type="submit" class="btn btn-primary text-center" [disabled]="!userForm.form.valid">Sign Up</button>
+        </form>
+        <a href="#" class="text-center">Have an account? Sign in here</a>
+      </div>
+    </div>
+
+  </div>
+</div>

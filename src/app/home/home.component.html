@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="row">
+    <div class="breadcrumb-container col-md-12">
+      <span>Dashboard</span>
+    </div>
+  </div>
+  <div class="row py-4">
+    <div class="col-md-4 box">
+      <div class="header-box">
+        <span>(23) Notifications</span>
+        <select class="float-right">
+          <option value="">Filter</option>
+          <option value="1">Option 1</option>
+          <option value="1">Option 2</option>
+          <option value="1">Option 3</option>
+        </select>
+      </div>
+      <div class="notification-box" *ngFor="let notification of notifications;  let i=index">
+        <div>
+          <div class="float-left pt-2">
+            <span class="icon" [ngClass]="{'icon-message': notification.notification_type === 'Message',
+          'icon-green-checkmark': notification.notification_type === 'App-Install-Notification', 
+          'icon-blue-checkmark': notification.notification_type === 'Job-notification', 
+          'icon-reload': notification.notification_type === 'Added-Skills-Notification'}">
+
+            </span>
+          </div>
+          <div style="overflow:hidden">
+            <div class="py-2">
+              <span class="font-weight-bold header-text">{{notification.title}}</span>
+              <span class="secondary-text float-right">{{notification.date}}</span>
+            </div>
+            <div>
+              <span class="header-text">{{notification.description}}</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-12">
+          Graphics :TODO
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="header-box box">
+            <span>Worker Location</span>
+          </div>
+          <div class="table-scroll-container">
+            <table class="table">
+              <tbody>
+                <tr *ngFor="let worker_location of workers_locations" class="full-box-no-top">
+                  <td class="text-center border-top-0" style="width: 40px;">
+                    <img width="36" src="{{worker_location.picture}}" class="rounded-circle">
+                  </td>
+                  <td class="text-left border-top-0">
+                    <span class="icon mr-2" [ngClass]="{'circle-status-green': worker_location.status === 'Available',
+                      'circle-status-red': worker_location.status === 'Not available',
+                      'circle-status-orange': worker_location.status === 'Busy'}"></span>{{worker_location.name}}</td>
+                  <td>{{worker_location.labour}}</td>
+                  <td class="header-text border-top-0">{{worker_location.location}}</td>
+                  <td class="text-right border-top-0">
+                    <p class="m-0">{{worker_location.timeone}}</p>
+                    <p class="header-text m-0 text-12">{{worker_location.timetwo}}</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-4">
+        <div class="col-md-12">
+          <div class="header-box box">
+            <span>Assigned Jobs</span>
+          </div>
+          <div class="table-scroll-container overlapped">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th class="header-text font-weight-normal"><span class="icon icon-sort-arrows mr-2"></span>Date</th>
+                  <th class="header-text font-weight-normal"><span class="icon icon-sort-arrows mr-2"></span>Status</th>
+                  <th class="header-text font-weight-normal"><span class="icon icon-sort-arrows mr-2"></span>Filled</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let assigned_job of assigned_jobs" class="full-box-no-top">
+                  <td class="text-center border-top-0" style="width: 40px;">
+                    <img width="36" src="{{assigned_job.picture}}" class="rounded-circle">
+                  </td>
+                  <td class="text-left border-top-0">
+                    {{assigned_job.name}}
+                  </td>
+                  <td>{{assigned_job.labour}}</td>
+                  <td class="header-text border-top-0">{{assigned_job.from_date}}-<br>{{assigned_job.to_date}}</td>
+                  <td class="header-text border-top-0">{{assigned_job.status}}</td>
+                  <td class="border-top-0" [ngClass]="{'text-success': assigned_job.filled,'text-danger': !assigned_job.filled}">
+                    {{assigned_job.filled_value}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

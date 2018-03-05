@@ -1,0 +1,9 @@
+.nav-item > a {
+  color: #89939a;
+}
+.nav-item > a:hover {
+  color: #29abe2;
+}
+.nav-item {
+  margin-right: 40px;
+}

@@ -1,0 +1,188 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Helvetica Neue';
+  background-color: #ffffff;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #212121;
+}
+
+
+
+input.form-control {
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: solid 1px #e2e9ef;
+}
+
+button.btn.btn-primary {
+  background-color: #29ABE2; 
+}
+button.btn.btn-primary:hover{
+  background-color: #26A0D4; 
+}
+
+.secondary-text {
+  color: #a7b9c6;
+}
+
+.text-large {
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #313541;
+}
+.relative-container {
+  position: relative;
+}
+:-moz-ui-invalid:not(output) {
+  box-shadow: none;
+}
+
+.header-title {
+  background: url('assets/svg/header-title.svg');
+  width: 113px;
+  height: 13.7px;
+  vertical-align: middle;
+  display: inline-block;
+}
+header {
+  background-color: #29abe2;
+  height: 54px;
+  line-height: 54px;
+}
+.header-text {
+  color: #89939a;
+}
+.notification-icon {
+  background: url('assets/svg/bell-icon.svg');
+  width: 20px;
+  height: 21px;
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.user-profile {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0 10px;
+}
+.user-profile img {
+  width: 30px;
+}
+span.icon {
+  margin-right: 15px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon-search {
+  background: url('assets/svg/shape.svg');
+  width: 18px;
+  height: 18px;
+}
+.icon-message {
+  background: url('assets/svg/message.svg');
+  width: 16px;
+  height: 19px;
+}
+.icon-setting {
+  background: url('assets/svg/chat-icon.svg');
+  width: 18px;
+  height: 18px;
+}
+.icon-green-checkmark {
+  background: url('assets/svg/green-checkmark.svg');
+  width: 13px;
+  height: 12px;
+}
+.icon-blue-checkmark {
+  background: url('assets/svg/turquise-checkmark.svg');
+  width: 16px;
+  height: 15px;
+}
+.icon-red-x {
+  background: url('assets/svg/red-x.svg');
+  width: 12px;
+  height: 12px;
+}
+.icon-reload {
+  background: url('assets/svg/reload.svg');
+  width: 16px;
+  height: 16px;
+}
+.icon-sort-arrows {
+  width: 7px;
+  height: 13px;
+  background: url('assets/svg/sort-arrows.svg');
+}
+.breadcrumb-container {
+  border-radius: 3px;
+  background-color: #f4f7fa;
+  border: solid 1px #e2e9ef;
+  height: 50px;
+  line-height: 50px;
+}
+.breadcrumb-container > span {
+  color: #a7b9c6;
+}
+.text-12 {
+  font-size: 12px;
+}
+.box {
+  border-radius: 3px;
+  border: solid 1px #e2e9ef;
+  padding: 0;
+}
+.full-box-no-top {
+  border-bottom: solid 1px #e2e9ef;
+  border-left: solid 1px #e2e9ef;
+  border-right: solid 1px #e2e9ef;
+  padding: 3px 5px;
+}
+.header-box {
+  background-color: #f4f7fa;
+  padding: 20px 15px;
+  border-bottom: solid 1px #e2e9ef;
+  color: #89939a;
+}
+select {
+  border-radius: 3px;
+  border: solid 1px #e2e9ef;
+  height: 38px;
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;       /* remove default arrow */
+  background-image: url('assets/img/arrow-down.png');
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  color: #b0bac5;
+  min-width: 150px;
+  overflow: hidden;
+  padding: 2px 10px;
+}
+.circle-status-green {
+  border-radius: 50%;
+  width: 9px;
+  height: 9px;
+  background-color: #96cb17;
+}
+.circle-status-red {
+  border-radius: 50%;
+  width: 9px;
+  height: 9px;
+  background-color: #d0021b;
+}
+.circle-status-orange {
+  border-radius: 50%;
+  width: 9px;
+  height: 9px;
+  background-color: #f5a623;
+}

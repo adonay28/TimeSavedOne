@@ -1,0 +1,34 @@
+.notification-box {
+  padding: 10px 15px;
+  border-bottom: solid 1px #e2e9ef;
+}
+.header-box > select {
+  position: relative;
+  top: 50%;
+  transform: translateY(-25%);
+}
+.table th {
+  border-bottom: 0;
+  border-top: 0;
+}
+.table td {
+  vertical-align: middle;
+  border-top: 0;
+}
+td {
+  padding: 0.75rem;
+}
+
+td:first-child {
+  padding-top: 0.75rem;
+  padding-bottom:0.75rem;
+  padding-left:0.75rem; 
+  padding-right: 0;
+}
+.table-scroll-container {
+  overflow-y: scroll;
+  max-height:200px;
+}
+.overlapped {
+  margin-top: -48px;
+}
