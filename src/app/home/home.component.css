@@ -1,6 +1,8 @@
 .notification-box {
   padding: 10px 15px;
   border-bottom: solid 1px #e2e9ef;
+  border-left: solid 1px #e2e9ef;
+  border-right: solid 1px #e2e9ef;
 }
 .header-box > select {
   position: relative;
@@ -26,9 +28,19 @@ td:first-child {
   padding-right: 0;
 }
 .table-scroll-container {
-  overflow-y: scroll;
   max-height:200px;
 }
-.overlapped {
-  margin-top: -48px;
+.sort-items {
+  float: right;
+  padding: 0 20px;
+}
+.donut-chart {
+  position: relative;
+}
+.donut-chart h3 {
+  color: #89939a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }

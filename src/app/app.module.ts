@@ -9,12 +9,16 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SharedService } from './shared/shared.service';
 import { LoginComponent } from "./login/login.component";
+import { SelectModule } from 'ng-select';
+import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
 
 @NgModule({
   imports: [ 
     BrowserModule,
     FormsModule,
     HttpModule,
+    SelectModule,
+    MalihuScrollbarModule.forRoot(),
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent},
       { path: 'login', component: LoginComponent},

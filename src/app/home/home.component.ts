@@ -1,14 +1,54 @@
-import {Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
+import { IOption } from 'ng-select';
 
-@Component ({
-    moduleId: module.id,
-    templateUrl: 'home.component.html',
-    styleUrls: ['./home.component.css']
+@Component({
+  moduleId: module.id,
+  templateUrl: 'home.component.html',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private notifications:any[] = [];
-  private workers_locations:any[] = [];
-  private assigned_jobs:any[] = [];
+  private notifications: any[] = [];
+  private workers_locations: any[] = [];
+  private assigned_jobs: any[] = [];
+  myOptions: Array<IOption> = [
+    { label: 'Option 1', value: '1' },
+    { label: 'Option 2', value: '2' },
+    { label: 'Option 3', value: '3' }
+  ];
+  public scrollbarOptions = { axis: 'y', theme: 'dark-2' };
+  items:Array<{name:string,count:number,color:string}>=[
+    {name:'Orange',count:20,color:'#29abe2'},
+    {name:'Apple',count:50,color:'#f4f7fa'}
+  ];
+ private _total:number =0;
+ constructor() {
+  if(this.items.length>0)
+  {
+    this._total = this.items.map(a=>a.count).reduce((x,y)=>x+y);
+  }
+
+}
+getPerimeter(radius:number):number
+{
+  return Math.PI*2*radius;
+}
+
+getColor(index:number):string
+{
+  return this.items[index].color;
+}
+
+getOffset(radius:number,index:number):number
+{   
+  var percent=0;
+  for(var i=0;i<index;i++)
+  {
+    percent+=((this.items[i].count)/this._total);
+  }
+  var perimeter = Math.PI*2*radius;
+  return perimeter*percent;
+}
+
   ngOnInit() {
 
     this.notifications = [
@@ -126,4 +166,5 @@ export class HomeComponent implements OnInit {
       }
     ];
   }
+
 }

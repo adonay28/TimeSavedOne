@@ -5,15 +5,12 @@
     </div>
   </div>
   <div class="row py-4">
-    <div class="col-md-4 box">
-      <div class="header-box">
+    <div class="col-md-4 box-top">
+      <div class="header-box d-flex align-items-center">
         <span>(23) Notifications</span>
-        <select class="float-right">
-          <option value="">Filter</option>
-          <option value="1">Option 1</option>
-          <option value="1">Option 2</option>
-          <option value="1">Option 3</option>
-        </select>
+        <ng-select class="ml-auto" [options]="myOptions" highlightColor="#fff" highlightTextColor="#29abe2" placeholder="Filter"
+          [noFilter]="Infinity">
+        </ng-select>
       </div>
       <div class="notification-box" *ngFor="let notification of notifications;  let i=index">
         <div>
@@ -37,11 +34,53 @@
 
         </div>
       </div>
+      <div class="notification-box text-center">
+        <a href="">Read more</a>
+      </div>
     </div>
     <div class="col-md-8">
       <div class="row">
-        <div class="col-md-12">
-          Graphics :TODO
+        <div class="col-md-3 text-center">
+          <div class="donut-chart">
+            <h3>20/50</h3>
+            <svg height="110px" width="100%" viewBox="0 0 120 120">
+              <circle *ngFor="let item of items;let i=index" cx="60" cy="60" r="50" fill="transparent" stroke-width="10" [attr.stroke-dasharray]="getPerimeter(50)"
+                [attr.stroke-dashoffset]="getOffset(50,i)" [attr.stroke]="getColor(i)" />
+            </svg>
+          </div>
+          <span class="header-text d-block py-2">Open Jobs</span>
+          <span class="header-text d-block py-2">0-7 days</span>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="donut-chart">
+            <h3>30/50</h3>
+            <svg height="110px" width="100%" viewBox="0 0 120 120">
+              <circle *ngFor="let item of items;let i=index" cx="60" cy="60" r="50" fill="transparent" stroke-width="10" [attr.stroke-dasharray]="getPerimeter(50)"
+                [attr.stroke-dashoffset]="getOffset(50,i)" [attr.stroke]="getColor(i)" />
+            </svg>
+          </div>
+          <span class="header-text d-block py-2">Open Jobs</span>
+          <span class="header-text d-block py-2">7-30 days</span>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="donut-chart">
+            <h3>5/100</h3>
+            <svg height="110px" width="100%" viewBox="0 0 120 120">
+              <circle *ngFor="let item of items;let i=index" cx="60" cy="60" r="50" fill="transparent" stroke-width="10" [attr.stroke-dasharray]="getPerimeter(50)"
+                [attr.stroke-dashoffset]="getOffset(50,i)" [attr.stroke]="getColor(i)" />
+            </svg>
+          </div>
+          <span class="header-text d-block py-2">App Not Installed</span>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="donut-chart">
+            <h3>5/100</h3>
+            <svg height="110px" width="100%" viewBox="0 0 120 120">
+              <circle *ngFor="let item of items;let i=index" cx="60" cy="60" r="50" fill="transparent" stroke-width="10" [attr.stroke-dasharray]="getPerimeter(50)"
+                [attr.stroke-dashoffset]="getOffset(50,i)" [attr.stroke]="getColor(i)" />
+            </svg>
+          </div>
+          <span class="header-text d-block py-2">Unverified Workers</span>
         </div>
       </div>
       <div class="row">
@@ -49,10 +88,10 @@
           <div class="header-box box">
             <span>Worker Location</span>
           </div>
-          <div class="table-scroll-container">
+          <div class="table-scroll-container" malihu-scrollbar [scrollbarOptions]="scrollbarOptions">
             <table class="table">
               <tbody>
-                <tr *ngFor="let worker_location of workers_locations" class="full-box-no-top">
+                <tr *ngFor="let worker_location of workers_locations" class="box-no-top">
                   <td class="text-center border-top-0" style="width: 40px;">
                     <img width="36" src="{{worker_location.picture}}" class="rounded-circle">
                   </td>
@@ -76,21 +115,17 @@
         <div class="col-md-12">
           <div class="header-box box">
             <span>Assigned Jobs</span>
+            <span class="sort-items">
+              <span class="icon icon-sort-arrows mr-2"></span>Filled</span>
+            <span class="sort-items">
+              <span class="icon icon-sort-arrows mr-2"></span>Status</span>
+            <span class="sort-items">
+              <span class="icon icon-sort-arrows mr-2"></span>Date</span>
           </div>
-          <div class="table-scroll-container overlapped">
+          <div class="table-scroll-container" malihu-scrollbar [scrollbarOptions]="scrollbarOptions">
             <table class="table">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                  <th class="header-text font-weight-normal"><span class="icon icon-sort-arrows mr-2"></span>Date</th>
-                  <th class="header-text font-weight-normal"><span class="icon icon-sort-arrows mr-2"></span>Status</th>
-                  <th class="header-text font-weight-normal"><span class="icon icon-sort-arrows mr-2"></span>Filled</th>
-                </tr>
-              </thead>
               <tbody>
-                <tr *ngFor="let assigned_job of assigned_jobs" class="full-box-no-top">
+                <tr *ngFor="let assigned_job of assigned_jobs" class="box-no-top">
                   <td class="text-center border-top-0" style="width: 40px;">
                     <img width="36" src="{{assigned_job.picture}}" class="rounded-circle">
                   </td>
@@ -98,7 +133,8 @@
                     {{assigned_job.name}}
                   </td>
                   <td>{{assigned_job.labour}}</td>
-                  <td class="header-text border-top-0">{{assigned_job.from_date}}-<br>{{assigned_job.to_date}}</td>
+                  <td class="header-text border-top-0" style="width: 40px;">{{assigned_job.from_date}}-
+                    <br>{{assigned_job.to_date}}</td>
                   <td class="header-text border-top-0">{{assigned_job.status}}</td>
                   <td class="border-top-0" [ngClass]="{'text-success': assigned_job.filled,'text-danger': !assigned_job.filled}">
                     {{assigned_job.filled_value}}

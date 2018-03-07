@@ -141,32 +141,50 @@ span.icon {
   border: solid 1px #e2e9ef;
   padding: 0;
 }
-.full-box-no-top {
+.box-no-top {
   border-bottom: solid 1px #e2e9ef;
   border-left: solid 1px #e2e9ef;
   border-right: solid 1px #e2e9ef;
-  padding: 3px 5px;
+  padding: 0;
+}
+.box-no-bottom {
+  border-top: solid 1px #e2e9ef;
+  border-left: solid 1px #e2e9ef;
+  border-right: solid 1px #e2e9ef;
+  padding: 0;
+}
+.box-left-right {
+  border-left: solid 1px #e2e9ef;
+  border-right: solid 1px #e2e9ef;
+}
+.box-top {
+  border-top: solid 1px #e2e9ef;
+  padding: 0;
 }
 .header-box {
   background-color: #f4f7fa;
   padding: 20px 15px;
   border-bottom: solid 1px #e2e9ef;
+  border-left: solid 1px #e2e9ef;
+  border-right: solid 1px #e2e9ef;
   color: #89939a;
 }
-select {
+ng-select {
+  background: #fff !important;
+  color: #b0bac5 !important;
+  min-width: 150px !important;
+  width: auto !important;
   border-radius: 3px;
   border: solid 1px #e2e9ef;
-  height: 38px;
-  -webkit-appearance: none; 
-  -moz-appearance: none;
-  appearance: none;       /* remove default arrow */
-  background-image: url('assets/img/arrow-down.png');
+}
+ng-select .toggle{
+  background-image: url('assets/img/arrow-down.png') !important;
   background-repeat: no-repeat;
-  background-position: 95% 50%;
-  color: #b0bac5;
-  min-width: 150px;
-  overflow: hidden;
-  padding: 2px 10px;
+  background-position: center center;
+  color: transparent !important;
+}
+ng-select .selected {
+  background-color: #fff !important;
 }
 .circle-status-green {
   border-radius: 50%;
@@ -185,4 +203,31 @@ select {
   width: 9px;
   height: 9px;
   background-color: #f5a623;
+}
+.mCSB_inside > .mCSB_container {
+  margin-right: 4px !important;
+} 
+.mCS-dark-2.mCSB_scrollTools .mCSB_draggerRail {
+  background-color: #fff;
+  border: solid 1px #e2e9ef;
+  border-radius: 0;
+}
+.mCS-dark-2.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  border-radius: 9px;
+  background-color: #d8d8d8;
+}
+.mCS-dark-2.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+  border-radius: 9px;
+  background-color: #d8d8d8;
+}
+.mCSB_scrollTools .mCSB_draggerContainer {
+  position: absolute;
+  top: 0;
+  left: auto;
+  bottom: 0;
+  right: 0;
+  height: auto;
+}
+.table {
+  margin-bottom: 0;
 }
