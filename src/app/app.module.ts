@@ -11,6 +11,7 @@ import { SharedService } from './shared/shared.service';
 import { LoginComponent } from "./login/login.component";
 import { SelectModule } from 'ng-select';
 import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
+import { JobsModule } from "./jobs/jobs.module";
 
 @NgModule({
   imports: [ 
@@ -24,7 +25,8 @@ import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
       { path: 'login', component: LoginComponent},
       { path: '', redirectTo: 'home', pathMatch: 'full'},
       { path: '**', redirectTo: 'home', pathMatch: 'full'}
-    ])
+    ]),
+    JobsModule
   ],
   providers: [
     SharedService

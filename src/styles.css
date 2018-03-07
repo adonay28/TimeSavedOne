@@ -169,6 +169,13 @@ span.icon {
   border-right: solid 1px #e2e9ef;
   color: #89939a;
 }
+.tab-box {
+  background-color: #f4f7fa;
+  border-bottom: solid 1px #e2e9ef;
+  border-left: solid 1px #e2e9ef;
+  border-right: solid 1px #e2e9ef;
+  color: #89939a;
+}
 ng-select {
   background: #fff !important;
   color: #b0bac5 !important;
@@ -230,4 +237,22 @@ ng-select .selected {
 }
 .table {
   margin-bottom: 0;
+}
+.nav-tabs .nav-link {
+  border: none;
+  color: #89939a;
+}
+.nav-tabs {
+  border: none;
+}
+.nav-tabs .nav-link.active {
+  background-color: #f4f7fa;
+  color: #29ABE2;
+  border-bottom: 2px solid #29ABE2;
+}
+.nav-tabs .nav-item {
+  margin: 0 20px;
+}
+.t-modal-header {
+  font-size: 18px;
 }
