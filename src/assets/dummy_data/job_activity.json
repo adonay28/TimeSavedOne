@@ -1,0 +1,74 @@
+{
+   "job_activity": [
+     {
+       "_id": "5b91b3f29d85123681dbd3db",
+       "job": "5c7d14d1b3dc0548900ea2fc",
+       "worker": "5d4065f821ca31758fc1cc6d",
+       "__v": 0,
+       "createdAt": "2018-02-24T18:50:26.551Z",
+       "updatedAt": "2018-02-24T18:52:20.992Z",
+       "is_deleted": 0,
+       "is_archived": 0,
+       "currentStatus": {
+         "_id": "5b91b4208dd6b203d090f612",
+         "value": 7,
+         "comment": "You ended your Test Job 2.",
+         "rating": null,
+         "review": null,
+         "date": "2018-02-24T18:52:16.097Z"
+       },
+       "status": [
+         {
+           "comment": "You accepted the job.",
+           "value": 1,
+           "_id": "5e91b3f2833edc03cbe34a0e",
+           "date": "2018-02-24T18:50:26.551Z"
+         },
+         {
+           "value": 3,
+           "comment": "You arrived at the Test Job 2.",
+           "rating": null,
+           "review": null,
+           "_id": "5f91b3f5833edc03cbe34a0f",
+           "date": "2018-02-24T18:50:29.721Z"
+         },
+         {
+           "value": 2,
+           "comment": "You started your commute.",
+           "rating": null,
+           "review": null,
+           "_id": "5f91b4178dd6b203d090f610",
+           "date": "2018-02-24T18:51:03.826Z"
+         },
+         {
+           "value": 4,
+           "comment": "You started Test Job 2 job.",
+           "rating": null,
+           "review": null,
+           "_id": "5f91b41c8dd6b203d090f611",
+           "date": "2018-02-24T18:51:08.319Z"
+         },
+         {
+           "value": 7,
+           "comment": "You ended your Test Job 2.",
+           "rating": 3,
+           "review": "",
+           "_id": "5f91b4208dd6b203d090f612",
+           "adjust_time": {
+             "comment": "",
+             "end_time": {
+               "minute": "22",
+               "hour": "1"
+             },
+             "start_time": {
+               "minute": "20",
+               "hour": "0"
+             }
+           },
+           "date": "2018-02-24T18:51:12.139Z"
+         }
+       ]
+     }
+   ],
+   "count": 1
+ }

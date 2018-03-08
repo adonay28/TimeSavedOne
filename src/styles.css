@@ -11,7 +11,13 @@ body {
   color: #212121;
 }
 
+.normal-text {
+  color: #212121;
+}
 
+.selected-text {
+  color: #29abe2;
+}
 
 input.form-control {
   border-radius: 3px;
@@ -122,6 +128,26 @@ span.icon {
   width: 7px;
   height: 13px;
   background: url('assets/svg/sort-arrows.svg');
+}
+.icon-trash {
+  width: 16px;
+  height: 18px;
+  background: url('assets/svg/new-trash.svg');
+}
+.icon-chat-box {
+  width: 30px;
+  height: 30px;
+  background: url('assets/svg/chat-box.svg');
+}
+.icon-map-2 {
+  width: 16px;
+  height: 18px;
+  background: url('assets/svg/map-2.svg');
+}
+.icon-clock {
+  width: 17px;
+  height: 17px;
+  background: url('assets/svg/clock.svg');
 }
 .breadcrumb-container {
   border-radius: 3px;

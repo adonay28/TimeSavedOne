@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="breadcrumb-container col-md-10">
-      <span>Jobs > Active Jobs > Job12345 > David McCoy</span>
+      <span>Jobs > Active Jobs > Job12345 > <span class="selected-text">David McCoy</span></span>
     </div>
     <div class="col-md-2 text-center">
       <button class="btn btn-primary button-dashboard">New Job</button>
@@ -11,13 +11,34 @@
     <div class="col-md-4 box-top">
       <div class="header-box d-flex align-items-center">
         <span>Worker Activity</span>
+        <ng-select class="ml-auto" [options]="myOptions" highlightColor="#fff" highlightTextColor="#29abe2" placeholder="Date" [noFilter]="Infinity">
+        </ng-select>
+      </div>
+      <div class="box-no-top px-3 d-flex align-items-center worker-activity-box" *ngFor="let status of job_activity.status" >
+        <div class="bordered-styled d-inline-block">
+            <span class="icon worker-activity-circle"></span>
+        </div>
+        <span class="icon icon-clock ml-2"></span>
+        <div class="d-inline-block">
+          <span class="d-block my-2">{{status.date}}</span>
+          <span class="d-block mb-2">{{status.comment}}</span>
+        </div>
       </div>
     </div>
     <div class="col-md-8">
       <div class="row">
         <div class="col-md-12">
-          <div class="header-box box">
-            <span>Worker Location</span>
+          <div class="header-box box d-flex align-items-center">
+            <div>
+                <img width="36" src="https://secure.gravatar.com/avatar/ad11fc5c89084707c4cb3941e8051c90?s=64&d=https://app.zeplin.io/img/emotars/emotarFourLeafClover.png" class="rounded-circle">
+                <span class="normal-text pl-2">David McCoy</span>
+                <span class="pl-4">New York, ON.</span>
+            </div>
+            <div class="ml-auto">
+              <span class="icon icon-map-2"></span>
+              <span class="icon icon-chat-box"></span>
+              <span class="icon icon-trash"></span>
+            </div>
           </div>
           <div>
             <ul class="nav nav-tabs tab-box p-x-3 pt-3" id="myTab" role="tablist">
